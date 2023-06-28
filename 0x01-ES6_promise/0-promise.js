@@ -1,4 +1,4 @@
-function getResponseFromAPI() {
-  return Promise((resolve, reject) => {
-  });
+export function getResponseFromAPI() {
+  const emptyPromise = Promise.resolve();
+  return emptyPromise;
 }
