@@ -1,8 +1,5 @@
-function getListStudentIds(getListStudents) {
-  if ( !(getListStudents instanceof Array))
-    return [];
-  const studentList =  getListStudents.map(function(value, index) => {
-    return index;
-  )};
+export default function getListStudentIds(getListStudents) {
+  if (!(getListStudents instanceof Array)) return [];
+  const studentList = getListStudents.map((value, index) => index);
   return studentList;
 }
