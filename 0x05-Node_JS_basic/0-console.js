@@ -4,8 +4,8 @@
  * @returns string
  */
 
-function displayMessage(arg){
-  process.stdout.write(arg + '\n');
+function displayMessage(arg) {
+  console.log(arg)
 }
 
 module.exports = displayMessage;
