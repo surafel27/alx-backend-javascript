@@ -1,7 +1,7 @@
 const http = require('http');
 
 const port = 1245;
-const hostname = 'localhost'
+const hostname = 'localhost';
 const app = http.createServer();
 
 app.on('request', (req, res) => {
