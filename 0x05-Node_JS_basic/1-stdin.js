@@ -4,9 +4,16 @@
  * @returns string
  */
 
-console.log("Welcome to Holberton School, what is your name?" + '\n');
+console.log("Welcome to Holberton School, what is your name?");
+
 process.stdin.on('readable', function() {
   const name =  process.stdin.read();
-  console.log("Your name is:" + name);
-  console.log("This important software is now closing" + '\n');
-})
+
+  if (name) {
+    process.stdout.write("Your name is:" + name)
+  }
+});
+
+process.stdin.on('end', function() {
+  console.log("This important software is now closing");
+});
