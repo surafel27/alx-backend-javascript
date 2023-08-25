@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs');
 
 const PORT = 1245;
+const HOST = 'localhost';
 
 const dbFiles = process.argv.length > 2 ? process.argv[2] : '';
 
