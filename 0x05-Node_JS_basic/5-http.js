@@ -1,8 +1,8 @@
 const http = require('http');
 const fs = require('fs');
 
-const hostname = 'localhost';
-const port = 1245;
+const HOST = 'localhost';
+const PORT = 1245;
 const app = http.createServer();
 
 const dbFile = process.argv[2] ?? '';
@@ -90,11 +90,11 @@ const Routehandlers = [
           responseParts.push(
             err instanceof Error ? err.message : err.toString()
           );
-          const resMessage = responseParts.join('\n');
+          const responseText = responseParts.join('\n');
           res.setHeader('Content-Type', 'text/plain');
-          res.setHeader('Content-Length', resMessage.length);
+          res.setHeader('Content-Length', responseText.length);
           res.statusCode = 200;
-          res.write(Buffer.from(responseText));
+          res.write(responseText);
         });
     },
   },
@@ -109,8 +109,8 @@ app.on('request', (req, res) => {
   }
 });
 
-app.listen(port, hostname, () => {
-  console.log(`Server listening on http://${hostname}:${port}\n`);
+app.listen(PORT, HOST, () => {
+  console.log(`Server listening on http://${HOST}:${PORT}\n`);
 });
 
 module.exports = app;
