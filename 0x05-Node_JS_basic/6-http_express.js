@@ -4,7 +4,7 @@ const app = express();
 const PORT = 1245;
 const HOST = 'localhost';
 
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
   req.send('Hello Holberton School!');
 });
 
